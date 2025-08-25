@@ -22,3 +22,4 @@ lein run <shape>
 ## Available shapes
 + Sphere
 + Cylinder
++ Cone
