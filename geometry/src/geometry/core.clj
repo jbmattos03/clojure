@@ -21,10 +21,14 @@
         (println "Insert height of the cylinder:")
         (let [height (Double/parseDouble (read-line))
               volume-cylinder (cylinder/volume-of-cylinder radius height)
-              area-cylinder (cylinder/surface-area-of-cylinder radius height)]
+              total-area-cylinder (cylinder/total-surface-area-of-cylinder radius height)
+              lateral-area-cylinder (cylinder/lateral-surface-area-of-cylinder radius height)
+              base-area-cylinder (cylinder/base-surface-area-of-cylinder radius)]
           (println "Radius: " radius)
           (println "Height: " height)
           (println "Volume: " volume-cylinder)
-          (println "Area: " area-cylinder))))
+          (println "Lateral Area: " lateral-area-cylinder)
+          (println "Base Area: " base-area-cylinder)
+          (println "Total Area: " total-area-cylinder))))
     "Unknown shape" (println "Shape not recognized.")
   ))
