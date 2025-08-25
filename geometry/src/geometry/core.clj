@@ -1,6 +1,7 @@
 (ns geometry.core
   (:require [geometry.sphere :as sphere]
-            [geometry.cylinder :as cylinder])
+            [geometry.cylinder :as cylinder]
+            [geometry.cone :as cone])
   (:gen-class))
 
 (defn -main
@@ -30,5 +31,22 @@
           (println "Lateral Area: " lateral-area-cylinder)
           (println "Base Area: " base-area-cylinder)
           (println "Total Area: " total-area-cylinder))))
+    "cone" (do
+      (println "Insert radius of the base:")
+      (let [radius (Double/parseDouble (read-line))]
+        (println "Insert height of the cone:")
+        (let [height (Double/parseDouble (read-line))
+              volume-cone (cone/volume-of-cone radius height)
+              base-area-cone (cone/base-area-of-cone radius)
+              slant-height (cone/slant-height-cone radius height)
+              lateral-area-cone (cone/lateral-area-of-cone radius slant-height)
+              total-area-cone (cone/total-surface-area-of-cone radius height)]
+          (println "Radius: " radius)
+          (println "Height: " height)
+          (println "Volume: " volume-cone)
+          (println "Base Area: " base-area-cone)
+          (println "Slant Height: " slant-height)
+          (println "Lateral Area: " lateral-area-cone)
+          (println "Total Area: " total-area-cone))))
     "Unknown shape" (println "Shape not recognized.")
   ))
