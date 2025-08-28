@@ -13,4 +13,13 @@
       (println "Insert format (e.g., 'yyyy-MM-dd HH:mm:ss'):")
       (let [format (read-line)]
         (println (date.date-formatter/format-current-date-time-zoned timezone format)))))
+    "difference" (do
+    (println "Insert format (e.g., 'dd-MM-yyyy'):")
+    (let [format (read-line)]
+      (println "Insert start date (e.g., '2023-10-01'):")
+      (let [start-date (read-line)]
+        (println "Insert end date (e.g., '2023-10-31'):")
+        (let [end-date (read-line)]
+          (let [date-diff (date.date-calculator/calculate-date-difference start-date end-date format)]
+            (println "Date Difference:" date-diff))))))
     "Unknown mode" (println "Mode not recognized.")))
