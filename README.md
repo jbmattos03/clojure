@@ -23,3 +23,21 @@ lein run <shape>
 + Sphere
 + Cylinder
 + Cone
+
+# Date
+This is a simple project that uses Java's _time_ library to manipulate dates.
+
+## How to run
+First, make sure you are in the `date` folder:
+```bash
+cd date
+```
+
+Replace `<feature>` with one of the [available features](#available-features)
+```bash
+lein run <feature>
+```
+
+## Available features
++ Format: Formats a date/time in a format style provided by the user
++ Difference: Calculates the difference in years, months and days between two dates
